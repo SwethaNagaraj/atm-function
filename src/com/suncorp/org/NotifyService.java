@@ -31,14 +31,14 @@ public class NotifyService {
 
         Session session = Session.getDefaultInstance(properties, new javax.mail.Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("swetha2megha@gmail.com", "SwE5627*NAG");
+                return new PasswordAuthentication("sender@gmail.com", "password");
             }
         });
 
         Message message = new MimeMessage(session);
         try {
-            message.setFrom(new InternetAddress("swetha2megha@gmail.com"));
-            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("manu.bg027@gmail.com"));
+            message.setFrom(new InternetAddress("sender@gmail.com"));
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("reciever@gmail.com"));
             message.setSubject("Threshold reached in Cash Dispenser");
             message.setText("Cash Dispenser reached threshold limit. Please re-supply the dispenser as soon as possible!");
 
